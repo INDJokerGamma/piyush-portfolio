@@ -1,23 +1,11 @@
 {
-<<<<<<< HEAD
   "short_name": "Portfolio",
   "name": "Piyush Dawkhare Portfolio",
-=======
-  "short_name": "Aditya Portfolio",
-  "name": "Aditya Kumar Srivastava — Java Full Stack Developer",
-  "description": "Portfolio of Aditya Kumar Srivastava, Java Full Stack Developer specializing in Spring Boot, React, PostgreSQL, and AWS.",
->>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
-    },
-    {
-      "src": "aditya_kumar_pic.jpg",
-      "type": "image/jpeg",
-      "sizes": "512x512",
-      "purpose": "any"
     }
   ],
   "start_url": ".",

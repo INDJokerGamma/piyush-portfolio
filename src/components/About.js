@@ -1,20 +1,10 @@
 import React from 'react';
-<<<<<<< HEAD
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-=======
-import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram } from "react-icons/fa";
-import { BsTwitterX } from "react-icons/bs";
->>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
 
 import { ReactTyped } from 'react-typed';
 import piyushPic from '../Assets/piyush-dawkhare-pic.png';
 import { profile } from '../data/profile';
 import { motion } from 'framer-motion';
-<<<<<<< HEAD
-=======
-import { trackGithubClick, trackLinkedinClick } from '../lib/analytics';
-// Tailwind migration: inline classes
->>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
 
 const About = () => {
   return (
@@ -56,7 +46,6 @@ const About = () => {
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-<<<<<<< HEAD
           transition={{ duration: 0.7, ease: "easeOut" }}>
 
           <motion.div
@@ -83,23 +72,9 @@ const About = () => {
           <motion.h2
             className="text-xl sm:text-2xl font-medium text-muted-foreground mb-6 h-8"
             initial={{ opacity: 0, y: 15 }}
-=======
-          transition={{ duration: 0.6 }}>
-          <motion.h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-2 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 20 }}
->>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}>
-            {profile.name}
-          </motion.h1>
-          <motion.h3
-            className="text-2xl sm:text-3xl font-semibold tracking-tight mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}>
+            transition={{ duration: 0.5, delay: 0.2 }}>
             <ReactTyped
               strings={profile.titles}
               typeSpeed={50}
@@ -121,69 +96,6 @@ const About = () => {
               {p}
             </motion.p>
           ))}
-<<<<<<< HEAD
-=======
-        </motion.div>
-        <motion.div
-          className="flex-1 w-full flex flex-col items-center gap-4"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}>
-          <div className="relative group">
-            {/* Enhanced glow effect */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-lg blur-lg opacity-20"
-              animate={{
-                scale: [1, 1.05, 1],
-                opacity: [0.2, 0.3, 0.2],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* Floating accent dots */}
-            <motion.div
-              className="absolute -top-2 -right-2 w-3 h-3 bg-gradient-to-r from-primary to-purple-500 rounded-full"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.8, 1, 0.8],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-            <motion.div
-              className="absolute -bottom-2 -left-2 w-2 h-2 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.6, 0.9, 0.6],
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1,
-              }}
-            />
-
-            <div className="relative w-full max-w-sm overflow-hidden rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm shadow-lg group-hover:shadow-xl transition-all duration-500">
-              <motion.img
-                src={profile.image || adityaPic}
-                alt="Aditya Kumar Srivastava - Software Engineer & Java Full Stack Developer"
-                className="w-full h-auto"
-                loading="lazy"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              />
-            </div>
-          </div>
->>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
 
           {/* Social links */}
           <motion.div
@@ -205,14 +117,8 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-<<<<<<< HEAD
               className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border/60 bg-card text-muted-foreground hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
               whileHover={{ y: -2 }}
-=======
-              onClick={() => trackLinkedinClick('About Section')}
-              className="p-2 rounded-lg bg-gradient-to-r from-primary/10 to-purple-500/10 hover:from-primary/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 border border-border/50"
-              whileHover={{ scale: 1.1, rotate: 5 }}
->>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
               whileTap={{ scale: 0.95 }}>
               <FaLinkedin className="w-4 h-4" />
             </motion.a>
@@ -221,26 +127,10 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-<<<<<<< HEAD
               className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border/60 bg-card text-muted-foreground hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
               whileHover={{ y: -2 }}
-=======
-              onClick={() => trackGithubClick('About Section')}
-              className="p-2 rounded-lg bg-gradient-to-r from-primary/10 to-purple-500/10 hover:from-primary/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 border border-border/50"
-              whileHover={{ scale: 1.1, rotate: -5 }}
->>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
               whileTap={{ scale: 0.95 }}>
               <FaGithub className="w-4 h-4" />
-            </motion.a>
-            <motion.a
-              href={profile.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="p-2 rounded-lg bg-gradient-to-r from-primary/10 to-purple-500/10 hover:from-primary/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 border border-border/50"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}>
-              <FaInstagram />
             </motion.a>
           </motion.div>
         </motion.div>
