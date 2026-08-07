@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useRef } from 'react';
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { HiPaperAirplane } from 'react-icons/hi2';
@@ -21,13 +22,26 @@ import { motion } from 'framer-motion';
 const EMAILJS_SERVICE_ID = 'service_flqja3i';   // e.g. 'service_abc123'
 const EMAILJS_TEMPLATE_ID = 'template_os1gvgl'; // e.g. 'template_xyz789'
 const EMAILJS_PUBLIC_KEY = 'GxUdwdq4S46TLOnCV';    // e.g. 'aBcDeFgHiJkLmN'
+=======
+import React, { useState } from "react";
+import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { trackContactSubmit, trackGithubClick, trackLinkedinClick } from "../lib/analytics";
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
 
 const Contact = () => {
   const formRef = useRef();
   const [formData, setFormData] = useState({
+<<<<<<< HEAD
     from_name: '',
     from_email: '',
     message: ''
+=======
+    name: "",
+    email: "",
+    message: "",
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -35,13 +49,14 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+<<<<<<< HEAD
 
     try {
       await emailjs.sendForm(
@@ -83,12 +98,65 @@ const Contact = () => {
           fontFamily: 'Inter, sans-serif',
         }
       });
+=======
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/adityasri.in@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        // Track the submission event
+        trackContactSubmit(formData.email);
+
+        toast.success(
+          "Thank you for your message! I will get back to you soon.",
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          }
+        );
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Failed to submit form");
+      }
+    } catch (error) {
+      toast.error(
+        "Sorry, there was an error sending your message. Please try again later.",
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        }
+      );
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
+<<<<<<< HEAD
     <section id="contact" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       {/* Subtle background */}
       <div className="absolute inset-0 -z-10">
@@ -156,11 +224,61 @@ const Contact = () => {
                     <FaGithub className="w-4 h-4 text-primary" />
                   </div>
                   <span>github.com/INDJokerGamma</span>
+=======
+    <section
+      id="contact"
+      className="py-16 sm:py-20 lg:py-24 bg-foreground/[0.02]">
+      <div className="container">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+            Contact Me
+          </h2>
+        </div>
+
+        <div className="flex flex-wrap gap-10">
+          <div className="flex-1 min-w-[280px]">
+            <ToastContainer />
+            <h3 className="text-xl font-semibold">Get In Touch</h3>
+            <p className="text-muted-foreground mt-2">
+              Feel free to contact me for any work or suggestions below.
+            </p>
+
+            <div className="mt-6 space-y-4">
+              <div className="flex items-center gap-3">
+                <FaEnvelope className="text-primary" />
+                <a
+                  href="mailto:adityasri.in@gmail.com"
+                  className="hover:text-primary transition-colors">
+                  adityasri.in@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <FaLinkedin className="text-primary" />
+                <a
+                  href="https://www.linkedin.com/in/adityakumar29"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackLinkedinClick('Contact Section')}
+                  className="hover:text-primary transition-colors">
+                  linkedin.com/in/adityakumar29
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <FaGithub className="text-primary" />
+                <a
+                  href="https://github.com/adityaSrivastava29"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackGithubClick('Contact Section')}
+                  className="hover:text-primary transition-colors">
+                  github.com/adityaSrivastava29
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
                 </a>
               </div>
             </div>
           </motion.div>
 
+<<<<<<< HEAD
           {/* Contact form — right side */}
           <motion.div
             className="md:col-span-3"
@@ -244,6 +362,68 @@ const Contact = () => {
                   )}
                 </motion.button>
               </div>
+=======
+          <div className="flex-1 min-w-[280px]">
+            <form
+              className="rounded-md border border-border bg-card p-5 shadow-sm"
+              onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label
+                  htmlFor="name"
+                  className="mb-2 block text-sm font-medium">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your name"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="email"
+                  className="mb-2 block text-sm font-medium">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your email"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="message"
+                  className="mb-2 block text-sm font-medium">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring min-h-[120px]"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your message"
+                  rows="5"></textarea>
+              </div>
+              <button
+                type="submit"
+                className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-50"
+                disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
             </form>
           </motion.div>
         </div>

@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 import React from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+=======
+import React from "react";
+import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram } from "react-icons/fa";
+import { trackGithubClick, trackLinkedinClick } from "../lib/analytics";
+// Tailwind migration: inline classes
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
+<<<<<<< HEAD
     <footer className="mt-16 border-t border-border/60">
       <div className="container py-12">
         <div className="flex flex-col md:flex-row gap-10 md:gap-4 justify-between">
@@ -44,9 +52,54 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
+=======
+    <footer className="mt-16 border-t border-border bg-foreground/[0.02]">
+      <div className="container py-10">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-4 justify-between">
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold">Aditya Kumar Srivastava</h3>
+            <p className="max-w-md text-sm text-muted-foreground">
+              Software Engineer with a passion for creating innovative,
+              scalable, and high-performance solutions.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold">Links</h3>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>
+                <a
+                  className="hover:text-primary transition-colors"
+                  href="#about">
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-primary transition-colors"
+                  href="#experience">
+                  Experience
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-primary transition-colors"
+                  href="#projects">
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-primary transition-colors"
+                  href="#skills">
+                  Skills
+                </a>
+              </li>
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
             </ul>
           </motion.div>
 
+<<<<<<< HEAD
           {/* Social */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -73,14 +126,65 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
+=======
+          <div>
+            <h3 className="text-lg font-semibold">Connect</h3>
+            <ul className="mt-3 flex items-center gap-4">
+              <li>
+                <a
+                  className="hover:text-primary transition-colors"
+                  href="https://www.linkedin.com/in/adityakumar29"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackLinkedinClick('Footer')}
+                  aria-label="LinkedIn">
+                  <FaLinkedin size={20} />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-primary transition-colors"
+                  href="https://github.com/adityaSrivastava29"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackGithubClick('Footer')}
+                  aria-label="GitHub">
+                  <FaGithub size={20} />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-primary transition-colors"
+                  href="mailto:adityasri.in@gmail.com"
+                  aria-label="Email">
+                  <FaEnvelope size={20} />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-primary transition-colors"
+                  href="https://www.instagram.com/adityasrivastava29"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram">
+                  <FaInstagram size={20} />
+                </a>
+              </li>
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
             </ul>
           </motion.div>
         </div>
 
+<<<<<<< HEAD
         {/* Copyright */}
         <div className="mt-10 pt-6 border-t border-border/40 text-center">
           <p className="text-xs text-muted-foreground">
             © {currentYear} Piyush Vikas Dawkhare. All rights reserved.
+=======
+        <div className="mt-8 border-t border-border pt-4 text-center text-xs text-muted-foreground">
+          <p>
+            &copy; {new Date().getFullYear()} Aditya Kumar. All rights reserved.
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
           </p>
         </div>
       </div>

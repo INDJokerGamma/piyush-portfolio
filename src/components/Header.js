@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { ModeToggle } from './theme/mode-toggle';
 import { cn } from '../lib/utils';
+import resumePdf from '../Assets/Aditya_kumar_Java_full_stack_developer_resume.pdf';
+import { trackResumeDownload } from '../lib/analytics';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -62,6 +64,7 @@ const Header = () => {
           >
             Piyush<span className="text-primary">.</span>
           </button>
+<<<<<<< HEAD
 
           <ul className="hidden md:flex items-center gap-1 text-sm">
             {navItems.map((item) => (
@@ -85,6 +88,22 @@ const Header = () => {
                 href="https://drive.google.com/file/d/1fldTztMS-MU08XEVPBXLoe1RSHx5kZ7T/view?usp=sharing"
                 download="Resume.pdf"
                 className="inline-flex h-9 items-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-sm hover:shadow-md"
+=======
+          <ul className="hidden md:flex items-center gap-6 text-sm">
+            <li><a className="hover:text-primary transition-colors" href="#about" onClick={() => scrollToSection('about')}>About</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#experience" onClick={() => scrollToSection('experience')}>Experience</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#projects" onClick={() => scrollToSection('projects')}>Projects</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#skills" onClick={() => scrollToSection('skills')}>Skills</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#education" onClick={() => scrollToSection('education')}>Education</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#certifications" onClick={() => scrollToSection('certifications')}>Certifications</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#contact" onClick={() => scrollToSection('contact')}>Contact</a></li>
+            <li>
+              <a 
+                href={resumePdf} 
+                download="Aditya_Kumar_Resume.pdf" 
+                onClick={() => trackResumeDownload('Desktop PDF')}
+                className="inline-flex h-9 items-center rounded-md border border-border px-3 text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
               >
                 Resume
               </a>
@@ -106,6 +125,7 @@ const Header = () => {
           </div>
         </nav>
       </div>
+<<<<<<< HEAD
 
       {/* Mobile menu */}
       <div className={cn(
@@ -125,6 +145,25 @@ const Header = () => {
                   )}
                   href={`#${item.id}`}
                   onClick={(e) => { e.preventDefault(); scrollToSection(item.id); }}
+=======
+      {menuOpen && (
+        <div className="md:hidden border-t border-border bg-background">
+          <div className="container py-4">
+            <ul className="flex flex-col gap-3 text-sm">
+              <li><a className="block hover:text-primary" href="#about" onClick={() => scrollToSection('about')}>About</a></li>
+              <li><a className="block hover:text-primary" href="#experience" onClick={() => scrollToSection('experience')}>Experience</a></li>
+              <li><a className="block hover:text-primary" href="#projects" onClick={() => scrollToSection('projects')}>Projects</a></li>
+              <li><a className="block hover:text-primary" href="#skills" onClick={() => scrollToSection('skills')}>Skills</a></li>
+              <li><a className="block hover:text-primary" href="#education" onClick={() => scrollToSection('education')}>Education</a></li>
+              <li><a className="block hover:text-primary" href="#certifications" onClick={() => scrollToSection('certifications')}>Certifications</a></li>
+              <li><a className="block hover:text-primary" href="#contact" onClick={() => scrollToSection('contact')}>Contact</a></li>
+              <li>
+                <a 
+                  href={resumePdf} 
+                  download="Aditya_Kumar_Resume.pdf" 
+                  onClick={() => trackResumeDownload('Mobile PDF')}
+                  className="inline-flex h-9 items-center rounded-md border border-border px-3 text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+>>>>>>> bdd1dcc3179570a8ff7d381c2b9fca20c2e1938b
                 >
                   {item.label}
                 </a>
