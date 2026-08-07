@@ -1,8 +1,8 @@
-// // src/components/Certifications.js
 import React, { useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import { FaAws, FaGithub } from 'react-icons/fa';
 import { certifications } from '../data/certifications';
+import { motion } from 'framer-motion';
 
 const Certifications = () => {
   const [isFlipped, setIsFlipped] = useState({
@@ -15,68 +15,86 @@ const Certifications = () => {
     setIsFlipped((prevState) => ({ ...prevState, [key]: !prevState[key] }));
   };
 
+  const certKeys = ['awsDev', 'awsCloud', 'github'];
+
+  const getIcon = (cert) => {
+    if (cert.icon === 'aws') return <FaAws size={36} className="text-[#FF9900]" />;
+    return <FaGithub size={36} className="text-foreground" />;
+  };
+
+  const getBackBg = (cert) => {
+    if (cert.icon === 'aws') return 'bg-[#FF9900]';
+    return 'bg-foreground';
+  };
+
   return (
-    <section id="certifications" className="py-16 sm:py-20 lg:py-24 bg-foreground/[0.02]">
-      <div className="container text-center">
-        <div className="mb-12">
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Certifications</h2>
-          <p className="mt-2 text-muted-foreground">Recognized achievements in the field of technology.</p>
-        </div>
+    <section id="certifications" className="py-16 sm:py-20 lg:py-24">
+      <div className="container">
+        <motion.div
+          className="text-center mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 mb-4">
+            Achievements
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+            Certifications
+          </h2>
+          <p className="mt-3 text-muted-foreground max-w-md mx-auto">
+            Recognized achievements in the field of technology. Click a card to see the certificate.
+          </p>
+        </motion.div>
 
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          {/* AWS Developer Certification */}
-          {/* Item 1 */}
-          <ReactCardFlip isFlipped={isFlipped.awsDev} flipDirection="horizontal">
-            {/* Front Side */}
-            <div className="rounded-md border border-border bg-card p-6 shadow-sm cursor-pointer" onClick={() => handleFlip('awsDev')}>
-              <FaAws size={40} className="mx-auto mb-3 text-[#FF9900]" />
-              <h3 className="text-lg font-semibold">AWS Certified Developer - Associate</h3>
-              <p className="text-sm text-muted-foreground">Issued By: Amazon Web Services</p>
-              <p className="text-sm text-muted-foreground">September 2024 - September 2027</p>
-              <a href="https://www.credly.com/badges/7db7a116-798b-4143-b5d3-4bc650ccc019/linked_in_profile" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-primary font-medium">View Certificate</a>
-            </div>
+          {certifications.map((cert, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.08 }}
+            >
+              <ReactCardFlip isFlipped={isFlipped[certKeys[idx]]} flipDirection="horizontal">
+                {/* Front Side */}
+                <div
+                  className="rounded-xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-400 cursor-pointer text-center min-h-[220px] flex flex-col items-center justify-center"
+                  onClick={() => handleFlip(certKeys[idx])}
+                >
+                  <div className="mb-4 p-3 rounded-xl bg-muted/30 border border-border/40 inline-flex">
+                    {getIcon(cert)}
+                  </div>
+                  <h3 className="text-base font-semibold text-foreground mb-2">{cert.name}</h3>
+                  <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{cert.period}</p>
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center mt-4 text-sm text-primary hover:text-primary/80 font-medium transition-colors duration-300"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    View on Credly →
+                  </a>
+                </div>
 
-            {/* Back Side */}
-            <div className="rounded-md border border-border bg-[#FF9900] p-4 text-white cursor-pointer" onClick={() => handleFlip('awsDev')}>
-              <img src={certifications[0].image} alt="AWS Certified Developer Certificate" className="w-full h-auto rounded-md" loading="lazy" />
-            </div>
-          </ReactCardFlip>
-
-          {/* AWS Cloud Practitioner Certification */}
-          {/* Item 2 */}
-          <ReactCardFlip isFlipped={isFlipped.awsCloud} flipDirection="horizontal">
-            {/* Front Side */}
-            <div className="rounded-md border border-border bg-card p-6 shadow-sm cursor-pointer" onClick={() => handleFlip('awsCloud')}>
-              <FaAws size={40} className="mx-auto mb-3 text-[#FF9900]" />
-              <h3 className="text-lg font-semibold">AWS Certified Cloud Practitioner</h3>
-              <p className="text-sm text-muted-foreground">Issued By: Amazon Web Services</p>
-              <p className="text-sm text-muted-foreground">May 2023 - September 2027</p>
-              <a href="https://www.credly.com/badges/ec72467a-91a3-4a89-9551-e2ad94ed9327/linked_in_profile" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-primary font-medium">View Certificate</a>
-            </div>
-
-            {/* Back Side */}
-            <div className="rounded-md border border-border bg-[#FF9900] p-4 text-white cursor-pointer" onClick={() => handleFlip('awsCloud')}>
-              <img src={certifications[1].image} alt="AWS Certified Cloud Practitioner Certificate" className="w-full h-auto rounded-md" loading="lazy" />
-            </div>
-          </ReactCardFlip>
-
-          {/* GitHub Foundations Certification */}
-          {/* Item 3 */}
-          <ReactCardFlip isFlipped={isFlipped.github} flipDirection="horizontal">
-            {/* Front Side */}
-            <div className="rounded-md border border-border bg-card p-6 shadow-sm cursor-pointer" onClick={() => handleFlip('github')}>
-              <FaGithub size={40} className="mx-auto mb-3 text-foreground" />
-              <h3 className="text-lg font-semibold">GitHub Foundations</h3>
-              <p className="text-sm text-muted-foreground">Issued By: GitHub</p>
-              <p className="text-sm text-muted-foreground">May 2025 - March 2028</p>
-              <a href="https://www.credly.com/badges/20576d85-9b88-464f-acc6-ccfbaf247027/linked_in_profile" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-primary font-medium">View Certificate</a>
-            </div>
-
-            {/* Back Side */}
-            <div className="rounded-md border border-border bg-foreground p-4 text-white cursor-pointer" onClick={() => handleFlip('github')}>
-              <img src={certifications[2].image} alt="GitHub Foundations Certificate" className="w-full h-auto rounded-md" loading="lazy" />
-            </div>
-          </ReactCardFlip>
+                {/* Back Side */}
+                <div
+                  className={`rounded-xl ${getBackBg(cert)} p-4 cursor-pointer min-h-[220px] flex items-center justify-center shadow-md`}
+                  onClick={() => handleFlip(certKeys[idx])}
+                >
+                  <img
+                    src={cert.image}
+                    alt={`${cert.name} Certificate`}
+                    className="w-full h-auto rounded-lg"
+                    loading="lazy"
+                  />
+                </div>
+              </ReactCardFlip>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
