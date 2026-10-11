@@ -28,7 +28,6 @@ yarn-error.log*
 src/setupTests.js
 src/logo.svg
 src/App.css
-src/styles.css
 src/components/About.css
 src/components/Contact.css
 src/components/Footer.css
