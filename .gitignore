@@ -25,8 +25,6 @@ yarn-error.log*
 .idea/
 
 # old/unused assets (kept locally, excluded from repo)
-public/aditya_kumar_pic.jpg
-src/Assets/Aditya_kumar_Java_full_stack_developer_resume.pdf
 src/App.test.js
 src/setupTests.js
 src/logo.svg
