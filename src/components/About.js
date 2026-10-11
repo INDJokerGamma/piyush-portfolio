@@ -97,6 +97,19 @@ const About = () => {
             </motion.p>
           ))}
 
+          <div className="grid grid-cols-3 gap-3 mt-8 max-w-xl" aria-label="Portfolio highlights">
+            {[
+              ['500+', 'DSA problems'],
+              ['6', 'Featured projects'],
+              ['3', 'Leadership roles'],
+            ].map(([value, label]) => (
+              <div key={label} className="rounded-xl border border-border/60 bg-card/70 p-3 text-center">
+                <p className="text-xl font-bold text-primary">{value}</p>
+                <p className="mt-1 text-[11px] text-muted-foreground">{label}</p>
+              </div>
+            ))}
+          </div>
+
           {/* Social links */}
           <motion.div
             className="flex items-center gap-3 mt-8"
@@ -104,6 +117,21 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}>
+              <div className="flex flex-wrap gap-3 mb-5">
+                <a
+                  href="#projects"
+                  className="inline-flex items-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-all"
+                >
+                  View Projects
+                </a>
+                <a
+                  href="/Piyush_Dawkhare_HugoHub.pdf"
+                  download="Piyush-Dawkhare-Resume.pdf"
+                  className="inline-flex items-center rounded-lg border border-border/60 bg-card px-5 py-2.5 text-sm font-medium text-foreground hover:border-primary/30 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-all"
+                >
+                  Download Resume
+                </a>
+              </div>
             <motion.a
               href={`mailto:${profile.social.email}`}
               aria-label="Email"

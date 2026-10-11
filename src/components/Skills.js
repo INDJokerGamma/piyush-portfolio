@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaChartBar, FaCloudDownloadAlt, FaCode, FaCogs, FaLinux, FaPython, FaShieldAlt } from 'react-icons/fa';
+import { SiC, SiCplusplus, SiDocker, SiFirebase, SiGithub, SiGit, SiJavascript, SiMongodb, SiNodedotjs, SiNumpy, SiOracle, SiPostgresql, SiReact, SiScikitlearn, SiTailwindcss } from 'react-icons/si';
 import { skills } from '../data/skills';
 import { motion } from 'framer-motion';
 
@@ -58,12 +60,36 @@ const Skills = () => {
                     whileHover={{ y: -3 }}
                   >
                     <div className="h-14 w-14 flex items-center justify-center rounded-xl bg-muted/30 border border-border/40 group-hover:border-primary/30 group-hover:bg-primary/5 transition-all duration-300">
-                      <img
-                        src={skill.icon}
-                        alt={skill.name}
-                        className="max-h-7 max-w-7 transition-transform duration-300 group-hover:scale-110"
-                        loading="lazy"
-                      />
+                      {(() => {
+                        const iconMap = {
+                          C: SiC,
+                          'C++': SiCplusplus,
+                          Python: FaPython,
+                          JavaScript: SiJavascript,
+                          'React.js': SiReact,
+                          'Node.js': SiNodedotjs,
+                          'Express.js': FaCogs,
+                          'Tailwind CSS': SiTailwindcss,
+                          'REST API Design': FaCode,
+                          MongoDB: SiMongodb,
+                          PostgreSQL: SiPostgresql,
+                          Oracle: SiOracle,
+                          Firebase: SiFirebase,
+                          'Microsoft Azure': FaCloudDownloadAlt,
+                          Git: SiGit,
+                          GitHub: SiGithub,
+                          Linux: FaLinux,
+                          Docker: SiDocker,
+                          Pandas: FaPython,
+                          NumPy: SiNumpy,
+                          'Scikit-learn': SiScikitlearn,
+                          'Data Visualization': FaChartBar,
+                          'Authentication & RBAC': FaShieldAlt,
+                          'Multithreading & Memory Management': FaCogs,
+                        };
+                        const Icon = iconMap[skill.name] || FaCode;
+                        return <Icon aria-hidden="true" className="h-7 w-7 text-primary transition-transform duration-300 group-hover:scale-110" />;
+                      })()}
                     </div>
                     <span className="text-center text-[11px] text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-tight">
                       {skill.name}

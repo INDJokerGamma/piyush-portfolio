@@ -21,7 +21,7 @@ const Footer = () => {
               Piyush<span className="text-primary">.</span>
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Software Engineer with a passion for creating innovative, scalable, and high-performance solutions.
+              Full-stack developer building secure, practical, and reliable software with modern web technologies.
             </p>
           </motion.div>
 
@@ -34,7 +34,7 @@ const Footer = () => {
           >
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">Links</h3>
             <ul className="space-y-2.5 text-sm">
-              {['About', 'Experience', 'Projects', 'Skills'].map((link) => (
+              {['About', 'Experience', 'Projects', 'Skills', 'Achievements'].map((link) => (
                 <li key={link}>
                   <a
                     className="text-muted-foreground hover:text-primary transition-colors duration-300"

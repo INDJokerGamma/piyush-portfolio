@@ -45,6 +45,11 @@ const Projects = () => {
                   <p className="mt-1 text-xs text-muted-foreground">
                     {proj.period}
                   </p>
+                  {proj.status && (
+                    <span className="inline-flex mt-2 rounded-full bg-primary/10 px-2 py-1 text-[10px] font-medium text-primary">
+                      {proj.status}
+                    </span>
+                  )}
                 </div>
                 <Dialog.Root>
                   <Dialog.Trigger asChild>

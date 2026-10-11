@@ -25,7 +25,6 @@ yarn-error.log*
 .idea/
 
 # old/unused assets (kept locally, excluded from repo)
-src/App.test.js
 src/setupTests.js
 src/logo.svg
 src/App.css

@@ -6,6 +6,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import { SkeletonGrid } from './components/ui/skeleton';
 import { ScrollFeatures } from './components/ui/ScrollFeatures';
+import { projects } from './data/projects';
 import './index.css';
 const Experience = React.lazy(() => import('./components/Experience'));
 const Projects = React.lazy(() => import('./components/Projects'));
@@ -25,9 +26,13 @@ function App() {
         <meta property="og:title" content="Piyush V. Dawkhare - Portfolio" />
         <meta property="og:description" content="Welcome to my portfolio website. Explore my projects, skills, and professional experience." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://indjokergamma.github.io/piyush-portfolio/" />
+        <meta property="og:image" content="https://indjokergamma.github.io/piyush-portfolio/og-image.svg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Piyush V. Dawkhare - Portfolio" />
         <meta name="twitter:description" content="Welcome to my portfolio website. Explore my projects, skills, and professional experience." />
+        <meta name="twitter:image" content="https://indjokergamma.github.io/piyush-portfolio/og-image.svg" />
+        <link rel="canonical" href="https://indjokergamma.github.io/piyush-portfolio/" />
         {/* SEO: Structured Data for Google */}
         <script type="application/ld+json">{`
           {
@@ -42,6 +47,20 @@ function App() {
             "description": "Portfolio website of Piyush V. Dawkhare, full-stack developer and Computer Science student."
           }
         `}</script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Featured projects by Piyush V. Dawkhare',
+            itemListElement: projects.map((project, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              name: project.title,
+              url: project.links.code,
+              description: project.bullets[0],
+            })),
+          })}
+        </script>
         <meta
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"

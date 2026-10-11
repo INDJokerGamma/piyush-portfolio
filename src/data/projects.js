@@ -58,6 +58,7 @@ export const projects = [
   {
     title: "Winter ARC",
     period: "2026",
+    status: "Currently building",
     bullets: [
       "Built a habit-tracking application for goals, daily progress, reflections, and achievements.",
       "Added analytics and calendar history to help users maintain consistent routines.",

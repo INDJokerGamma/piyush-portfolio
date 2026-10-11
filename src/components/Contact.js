@@ -69,6 +69,9 @@ const Contact = () => {
           <p className="mt-3 text-muted-foreground max-w-md mx-auto">
             Have a project in mind or just want to chat? Drop me a message.
           </p>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Submitting opens your default email app; no message data is stored by this site.
+          </p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto grid gap-10 md:grid-cols-5">
