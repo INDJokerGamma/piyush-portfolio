@@ -1,11 +1,10 @@
 {
-  "name": "aditya-portfolio",
+  "name": "piyush-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://adityasrivastava29.github.io",
+  "homepage": "https://indjokergamma.github.io/piyush-portfolio",
   "main": "index.js",
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-dialog": "^1.1.14",

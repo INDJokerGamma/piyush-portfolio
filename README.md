@@ -1,6 +1,6 @@
-# Aditya Kumar Srivastava - Portfolio Website
+# Piyush Vikas Dawkhare - Portfolio Website
 
-This is a personal portfolio website of Aditya Kumar Srivastava built with React to showcase my experience, projects, skills, and certifications.
+This is a personal portfolio website of Piyush Vikas Dawkhare built with React to showcase experience, projects, skills, and certifications.
 
 ## Features
 
@@ -23,8 +23,8 @@ This is a personal portfolio website of Aditya Kumar Srivastava built with React
 
 1. Clone the repository
    ```
-   git clone https://github.com/adityaSrivastava29/adityasrivastava29.github.io.git
-   cd adityasrivastava29.github.io
+   git clone https://github.com/INDJokerGamma/piyush-portfolio.git
+   cd piyush-portfolio
    ```
 
 2. Install dependencies

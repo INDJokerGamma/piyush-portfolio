@@ -10,7 +10,7 @@ export const projects = [
       "Enabled rapid development with Spring Boot DevTools and clean code structure using Lombok (where supported).",
     ],
     links: {
-      code: "https://github.com/adityaSrivastava29/springbootAIChatApp",
+      code: null,
       demo: null,
     },
     tags: ["Spring Boot", "Spring AI", "OpenAI", "Java", "REST API"],
@@ -27,8 +27,8 @@ export const projects = [
       "Developed admin module for managing movies, users, and content workflows.",
     ],
     links: {
-      code: "https://adityasrivastava29.github.io/",
-      demo: "https://adityasrivastava29.github.io/",
+      code: null,
+      demo: null,
     },
     tags: [
       "Spring Boot",
@@ -51,8 +51,8 @@ export const projects = [
       "Deployed on AWS with CI/CD pipelines ensuring high availability and automated builds.",
     ],
     links: {
-      code: "https://adityasrivastava29.github.io/",
-      demo: "https://adityasrivastava29.github.io/",
+      code: null,
+      demo: null,
     },
     tags: [
       "Spring Boot",

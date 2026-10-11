@@ -1,18 +1,12 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { HiPaperAirplane } from 'react-icons/hi2';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-
-
-const EMAILJS_SERVICE_ID = 'service_flqja3i';
-const EMAILJS_TEMPLATE_ID = 'template_os1gvgl';
-const EMAILJS_PUBLIC_KEY = 'GxUdwdq4S46TLOnCV';
+import { profile } from '../data/profile';
 
 const Contact = () => {
-  const formRef = useRef();
   const [formData, setFormData] = useState({
     from_name: '',
     from_email: '',
@@ -32,49 +26,23 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        EMAILJS_PUBLIC_KEY
-      );
-
-      toast.success('Message sent! I\'ll get back to you soon.', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        style: {
-          borderRadius: '12px',
-          fontFamily: 'Inter, sans-serif',
-        }
-      });
-
-      setFormData({
-        from_name: '',
-        from_email: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('EmailJS error:', error);
-      toast.error('Failed to send message. Please try again or email me directly.', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        style: {
-          borderRadius: '12px',
-          fontFamily: 'Inter, sans-serif',
-        }
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    const subject = `Portfolio inquiry from ${formData.from_name}`;
+    const body = `Name: ${formData.from_name}\nEmail: ${formData.from_email}\n\n${formData.message}`;
+    window.location.href = `mailto:${profile.social.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    toast.success('Your email app is opening.', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      style: {
+        borderRadius: '12px',
+        fontFamily: 'Inter, sans-serif',
+      }
+    });
+    setFormData({ from_name: '', from_email: '', message: '' });
+    setIsSubmitting(false);
   };
 
   return (
@@ -116,16 +84,16 @@ const Contact = () => {
               <h3 className="text-lg font-semibold text-foreground mb-4">Contact Info</h3>
               <div className="space-y-4">
                 <a
-                  href="mailto:piyushdawkhare0000@gmail.com"
+                  href={`mailto:${profile.social.email}`}
                   className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 group"
                 >
                   <div className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors duration-300">
                     <FaEnvelope className="w-4 h-4 text-primary" />
                   </div>
-                  <span>piyushdawkhare0000@gmail.com</span>
+                  <span>{profile.social.email}</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/piyush-dawkhare"
+                  href={profile.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 group"
@@ -136,7 +104,7 @@ const Contact = () => {
                   <span>linkedin.com/in/piyush-dawkhare</span>
                 </a>
                 <a
-                  href="https://github.com/INDJokerGamma"
+                  href={profile.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 group"
@@ -160,7 +128,6 @@ const Contact = () => {
           >
             <ToastContainer />
             <form
-              ref={formRef}
               className="rounded-xl border border-border/60 bg-card p-6 shadow-sm"
               onSubmit={handleSubmit}
             >

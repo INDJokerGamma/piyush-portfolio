@@ -25,13 +25,8 @@ yarn-error.log*
 .idea/
 
 # old/unused assets (kept locally, excluded from repo)
-.github/
 public/aditya_kumar_pic.jpg
 src/Assets/Aditya_kumar_Java_full_stack_developer_resume.pdf
-src/Assets/aws-ccp.png
-src/Assets/aws-cda.png
-src/Assets/github-foundations.png
-src/Assets/favicon.ico
 src/App.test.js
 src/setupTests.js
 src/logo.svg
@@ -41,4 +36,3 @@ src/components/About.css
 src/components/Contact.css
 src/components/Footer.css
 src/components/Header.css
-src/components/Blog.js
