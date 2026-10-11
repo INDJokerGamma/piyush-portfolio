@@ -1,12 +1,12 @@
 import piyushPic from "../Assets/piyush-dawkhare-pic.png";
 
 export const profile = {
-  name: "Piyush Vikas Dawkhare",
-  titles: ["Software Developer", "Full Stack Developer"],
+  name: "Piyush V. Dawkhare",
+  titles: ["Full Stack Developer", "Software Engineer", "Problem Solver"],
   bio: [
-    "Computer Science engineering student focused on backend development and system - level problem solving.",
-    "Skilled in JavaScript, React, Node.js, Firebase, C/C++ and Java, with experience building full-stack applications.",
-    "Strong foundation in data structures, databases, and scalable system design, with a focus on writing efficient and reliable code."
+    "Computer Science and Engineering student at Walchand College of Engineering, Sangli, focused on building reliable software and solving practical problems.",
+    "Experienced with full-stack applications, REST APIs, authentication systems, cloud services, and database-driven solutions.",
+    "Solved 500+ DSA problems and enjoy writing readable, maintainable code through collaboration and continuous learning."
   ],
   image: piyushPic,
   social: {

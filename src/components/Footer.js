@@ -80,7 +80,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-10 pt-6 border-t border-border/40 text-center">
           <p className="text-xs text-muted-foreground">
-            © {currentYear} Piyush Vikas Dawkhare. All rights reserved.
+            © {currentYear} Piyush V. Dawkhare. All rights reserved.
           </p>
         </div>
       </div>

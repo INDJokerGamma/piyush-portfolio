@@ -1,6 +1,6 @@
-# Piyush Vikas Dawkhare - Portfolio Website
+# Piyush V. Dawkhare - Portfolio Website
 
-This is a personal portfolio website of Piyush Vikas Dawkhare built with React to showcase experience, projects, skills, and certifications.
+This is a personal portfolio website of Piyush V. Dawkhare built with React to showcase experience, projects, skills, and achievements.
 
 ## Features
 
@@ -8,7 +8,7 @@ This is a personal portfolio website of Piyush Vikas Dawkhare built with React t
 - Interactive UI with smooth scrolling
 - Project showcase section
 - Skills and experience timeline
-- Contact form
+- Resume download and contact form
 - Deployed with GitHub Pages
 
 ## Technologies Used

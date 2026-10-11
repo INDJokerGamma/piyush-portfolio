@@ -17,7 +17,7 @@ const Header = () => {
       setScrolled(window.scrollY > 20);
 
       // Determine active section
-      const sections = ['about', 'experience', 'projects', 'skills', 'education', 'certifications', 'contact'];
+      const sections = ['about', 'experience', 'projects', 'skills', 'education', 'achievements', 'contact'];
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
         if (el && el.getBoundingClientRect().top <= 120) {
@@ -45,7 +45,7 @@ const Header = () => {
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
     { id: 'education', label: 'Education' },
-    { id: 'certifications', label: 'Certifications' },
+    { id: 'achievements', label: 'Achievements' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -82,7 +82,7 @@ const Header = () => {
             ))}
             <li className="ml-2">
               <a
-                href="https://drive.google.com/file/d/1fldTztMS-MU08XEVPBXLoe1RSHx5kZ7T/view?usp=sharing"
+                href="/Piyush_Dawkhare_HugoHub.pdf"
                 download="Resume.pdf"
                 className="inline-flex h-9 items-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-sm hover:shadow-md"
               >
@@ -132,7 +132,7 @@ const Header = () => {
             ))}
             <li className="mt-2">
               <a
-                href="https://drive.google.com/file/d/1fldTztMS-MU08XEVPBXLoe1RSHx5kZ7T/view?usp=sharing"
+                href="/Piyush_Dawkhare_HugoHub.pdf"
                 download="Resume.pdf"
                 className="inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-all duration-300"
               >

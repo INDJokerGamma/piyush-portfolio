@@ -11,35 +11,35 @@ const Experience = React.lazy(() => import('./components/Experience'));
 const Projects = React.lazy(() => import('./components/Projects'));
 const Skills = React.lazy(() => import('./components/Skills'));
 const Education = React.lazy(() => import('./components/Education'));
-const Certifications = React.lazy(() => import('./components/Certifications'));
+const Achievements = React.lazy(() => import('./components/Achievements'));
 const Contact = React.lazy(() => import('./components/Contact'));
 
 function App() {
   return (
     <div className="min-h-screen bg-background text-foreground grain-overlay">
       <Helmet>
-        <title>Piyush Vikas Dawkhare - Software Developer</title>
-        <meta name="description" content="Welcome to Piyush Vikas Dawkhare's portfolio website. A passionate software developer showcasing projects, skills, and experience." />
-        <meta name="keywords" content="Piyush Dawkhare, Piyush Vikas Dawkhare, Software Developer, Full Stack Developer, Portfolio" />
-        <meta name="author" content="Piyush Vikas Dawkhare" />
-        <meta property="og:title" content="Piyush Vikas Dawkhare - Portfolio" />
+        <title>Piyush V. Dawkhare - Full Stack Developer</title>
+        <meta name="description" content="Portfolio of Piyush V. Dawkhare, a Computer Science student and full-stack developer building reliable software, APIs, and cloud applications." />
+        <meta name="keywords" content="Piyush Dawkhare, Full Stack Developer, React, Node.js, Azure, Portfolio" />
+        <meta name="author" content="Piyush V. Dawkhare" />
+        <meta property="og:title" content="Piyush V. Dawkhare - Portfolio" />
         <meta property="og:description" content="Welcome to my portfolio website. Explore my projects, skills, and professional experience." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Piyush Vikas Dawkhare - Portfolio" />
+        <meta name="twitter:title" content="Piyush V. Dawkhare - Portfolio" />
         <meta name="twitter:description" content="Welcome to my portfolio website. Explore my projects, skills, and professional experience." />
         {/* SEO: Structured Data for Google */}
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "Person",
-            "name": "Piyush Vikas Dawkhare",
+            "name": "Piyush V. Dawkhare",
             "sameAs": [
               "https://github.com/INDJokerGamma",
               "https://www.linkedin.com/in/piyush-dawkhare"
             ],
             "jobTitle": "Software Developer",
-            "description": "Portfolio website of Piyush Vikas Dawkhare, Software Developer. Projects, skills, experience, and contact information."
+            "description": "Portfolio website of Piyush V. Dawkhare, full-stack developer and Computer Science student."
           }
         `}</script>
         <meta
@@ -61,7 +61,7 @@ function App() {
           <Projects />
           <Skills />
           <Education />
-          <Certifications />
+          <Achievements />
           <Contact />
         </Suspense>
       </div>
