@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/piyush-portfolio/static/css/main.903be34d.css",
+    "main.js": "/piyush-portfolio/static/js/main.629d9fef.js",
+    "static/js/557.a69a9fa8.chunk.js": "/piyush-portfolio/static/js/557.a69a9fa8.chunk.js",
+    "static/js/443.0bc19836.chunk.js": "/piyush-portfolio/static/js/443.0bc19836.chunk.js",
+    "static/js/199.9ced0a6a.chunk.js": "/piyush-portfolio/static/js/199.9ced0a6a.chunk.js",
+    "static/js/3.7031dd6e.chunk.js": "/piyush-portfolio/static/js/3.7031dd6e.chunk.js",
+    "static/js/899.c44fe315.chunk.js": "/piyush-portfolio/static/js/899.c44fe315.chunk.js",
+    "static/css/9.862e025d.chunk.css": "/piyush-portfolio/static/css/9.862e025d.chunk.css",
+    "static/js/9.456de6af.chunk.js": "/piyush-portfolio/static/js/9.456de6af.chunk.js",
+    "static/js/270.31c87885.chunk.js": "/piyush-portfolio/static/js/270.31c87885.chunk.js",
+    "static/js/191.bbcf89f9.chunk.js": "/piyush-portfolio/static/js/191.bbcf89f9.chunk.js",
+    "static/js/784.b6418ecf.chunk.js": "/piyush-portfolio/static/js/784.b6418ecf.chunk.js",
+    "static/media/piyush-dawkhare-pic.png": "/piyush-portfolio/static/media/piyush-dawkhare-pic.ab1f2c34146576f6ad6a.png",
+    "index.html": "/piyush-portfolio/index.html",
+    "main.903be34d.css.map": "/piyush-portfolio/static/css/main.903be34d.css.map",
+    "main.629d9fef.js.map": "/piyush-portfolio/static/js/main.629d9fef.js.map",
+    "557.a69a9fa8.chunk.js.map": "/piyush-portfolio/static/js/557.a69a9fa8.chunk.js.map",
+    "443.0bc19836.chunk.js.map": "/piyush-portfolio/static/js/443.0bc19836.chunk.js.map",
+    "199.9ced0a6a.chunk.js.map": "/piyush-portfolio/static/js/199.9ced0a6a.chunk.js.map",
+    "3.7031dd6e.chunk.js.map": "/piyush-portfolio/static/js/3.7031dd6e.chunk.js.map",
+    "899.c44fe315.chunk.js.map": "/piyush-portfolio/static/js/899.c44fe315.chunk.js.map",
+    "9.862e025d.chunk.css.map": "/piyush-portfolio/static/css/9.862e025d.chunk.css.map",
+    "9.456de6af.chunk.js.map": "/piyush-portfolio/static/js/9.456de6af.chunk.js.map",
+    "270.31c87885.chunk.js.map": "/piyush-portfolio/static/js/270.31c87885.chunk.js.map",
+    "191.bbcf89f9.chunk.js.map": "/piyush-portfolio/static/js/191.bbcf89f9.chunk.js.map",
+    "784.b6418ecf.chunk.js.map": "/piyush-portfolio/static/js/784.b6418ecf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.903be34d.css",
+    "static/js/main.629d9fef.js"
+  ]
+}
